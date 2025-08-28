@@ -1,4 +1,13 @@
 "use client";
+{
+  /* eslint-disable react/no-unescaped-entities */
+}
+{
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+}
+{
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+}
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import {

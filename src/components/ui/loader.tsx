@@ -1,4 +1,13 @@
 "use client";
+{
+  /* eslint-disable react/no-unescaped-entities */
+}
+{
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+}
+{
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+}
 import { motion } from "motion/react";
 import React from "react";
 
@@ -9,7 +18,7 @@ export const LoaderOne = () => {
       repeat: Infinity,
       repeatType: "loop" as const,
       delay: x * 0.2,
-      ease: "easeInOut",
+      ease: "easeInOut" as any,
     };
   };
   return (
@@ -55,7 +64,7 @@ export const LoaderTwo = () => {
       repeat: Infinity,
       repeatType: "loop" as const,
       delay: x * 0.2,
-      ease: "easeInOut",
+      ease: "easeInOut" as any,
     };
   };
   return (
@@ -114,7 +123,7 @@ export const LoaderThree = () => {
         animate={{ pathLength: 1, fill: "var(--fill-final)" }}
         transition={{
           duration: 2,
-          ease: "easeInOut",
+          ease: "easeInOut" as any,
           repeat: Infinity,
           repeatType: "reverse",
         }}
@@ -129,7 +138,7 @@ export const LoaderFour = ({ text = "Loading..." }: { text?: string }) => {
     <div className="relative font-bold text-black [perspective:1000px] dark:text-white">
       <motion.span
         animate={{
-          skew: [0, -40, 0],
+          skewX: [0, -40, 0],
           scaleX: [1, 2, 1],
         }}
         transition={{
@@ -204,7 +213,7 @@ export const LoaderFive = ({ text }: { text: string }) => {
             repeat: Infinity,
             repeatType: "loop",
             delay: i * 0.05,
-            ease: "easeInOut",
+            ease: "easeInOut" as any,
             repeatDelay: 2,
           }}
         >

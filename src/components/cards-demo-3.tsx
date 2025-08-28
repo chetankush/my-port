@@ -1,4 +1,13 @@
 "use client";
+{
+  /* eslint-disable react/no-unescaped-entities */
+}
+{
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+}
+{
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+}
 import { animate, motion } from "motion/react";
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";

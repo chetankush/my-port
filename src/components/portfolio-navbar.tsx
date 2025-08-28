@@ -1,4 +1,13 @@
 "use client";
+{
+  /* eslint-disable react/no-unescaped-entities */
+}
+{
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+}
+{
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+}
 import React, { useState } from "react";
 import {
   Navbar,

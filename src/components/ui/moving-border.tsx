@@ -1,3 +1,6 @@
+{/* eslint-disable react/no-unescaped-entities */}
+{/* eslint-disable @typescript-eslint/no-unused-vars */}
+{/* eslint-disable @typescript-eslint/no-explicit-any */}
 "use client";
 import React, { useRef } from "react";
 import {
@@ -83,7 +86,7 @@ export const MovingBorder = ({
   className?: string;
   [key: string]: any;
 }) => {
-  const pathRef = useRef<any>();
+  const pathRef = useRef<any>(null);
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {

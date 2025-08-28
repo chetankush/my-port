@@ -10,7 +10,7 @@ export function ProjectsSection() {
   const projectItems = featuredProjects.map((project) => ({
     title: project.title,
     description: project.description,
-    link: project.demoUrl || project.githubUrl || "#",
+    link: project.liveUrl || project.githubUrl || "#",
   }));
 
   return (

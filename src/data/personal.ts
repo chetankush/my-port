@@ -41,13 +41,13 @@ export const socialLinks: SocialLink[] = [
   },
   {
     platform: "GitHub",
-    url: "https://github.com/chetankushwah",
+    url: "https://github.com/chetankush",
     username: "@chetankushwah",
     icon: "github",
   },
   {
     platform: "Portfolio",
-    url: "https://chetankushwah.dev",
+    url: "https://chetankush.netlify.com",
     username: "Portfolio",
     icon: "globe",
   },

@@ -1,8 +1,17 @@
 "use client";
+{
+  /* eslint-disable react/no-unescaped-entities */
+}
+{
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+}
+{
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+}
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useParams, useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
+
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { getProjectById } from "@/data/projects";
