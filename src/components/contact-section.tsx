@@ -21,11 +21,32 @@ export function ContactSection() {
     email: "",
     message: "",
   });
+  const [result, setResult] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    setResult("Sending....");
+    
+    const form = e.target as HTMLFormElement;
+    const formDataObj = new FormData(form);
+    
+    formDataObj.append("access_key", "9965bd88-a2a3-4cbc-b2c0-74ef9b85fc63");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formDataObj
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      form.reset();
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
   };
 
   const handleChange = (
@@ -167,6 +188,7 @@ export function ContactSection() {
             viewport={{ once: true }}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
+              <input type="hidden" name="access_key" value="9965bd88-a2a3-4cbc-b2c0-74ef9b85fc63" />
               <div>
                 <label
                   htmlFor="name"
@@ -234,6 +256,20 @@ export function ContactSection() {
                   <span>Send Message</span>
                 </HoverBorderGradient>
               </div>
+              
+              {result && (
+                <div className="text-center mt-4">
+                  <span className={`text-sm ${
+                    result === "Form Submitted Successfully" 
+                      ? "text-green-400" 
+                      : result === "Sending...." 
+                        ? "text-blue-400" 
+                        : "text-red-400"
+                  }`}>
+                    {result}
+                  </span>
+                </div>
+              )}
             </form>
           </motion.div>
         </div>
