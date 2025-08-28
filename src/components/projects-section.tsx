@@ -14,7 +14,7 @@ export function ProjectsSection() {
   }));
 
   return (
-    <section id="projects" className="min-h-screen bg-black py-20">
+    <section id="projects" className="relative bg-black py-16 md:py-20 z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

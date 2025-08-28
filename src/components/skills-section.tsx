@@ -26,9 +26,9 @@ import { BackgroundLines } from "@/components/ui/background-lines";
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative min-h-screen bg-black pt-32 pb-16">
-      <BackgroundLines className="flex items-center justify-center w-full flex-col px-4">
-        <div className="relative z-10 max-w-6xl mx-auto">
+    <section id="skills" className="relative bg-black py-16 md:py-32 min-h-[auto] md:min-h-screen">
+      <BackgroundLines className="flex items-center justify-center w-full flex-col px-4 relative z-0">
+        <div className="relative z-10 max-w-6xl mx-auto w-full">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -70,7 +70,7 @@ export function SkillsSection() {
 
 function SkillsGrid() {
   return (
-    <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+    <ul className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:grid-rows-2 auto-rows-auto">
       <GridItem
         area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
         icon={<Code className="h-4 w-4 text-black dark:text-neutral-400" />}
@@ -168,7 +168,7 @@ interface GridItemProps {
 
 const GridItem = ({ area, icon, title, description }: GridItemProps) => {
   return (
-    <li className={`min-h-[14rem] list-none ${area}`}>
+    <li className={`min-h-[12rem] md:min-h-[14rem] list-none ${area}`}>
       <div className="relative h-full rounded-2xl border border-white/10 p-2 md:rounded-3xl md:p-3 bg-black/20 backdrop-blur-sm">
         <GlowingEffect
           spread={40}

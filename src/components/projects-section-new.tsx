@@ -35,10 +35,10 @@ export function ProjectsSectionNew() {
   return (
     <section
       id="projects"
-      className="relative min-h-screen bg-black pt-32 pb-16"
+      className="relative bg-black py-16 md:py-32"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950/20 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950/20 to-black -z-10" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         {/* Section Header */}
@@ -65,7 +65,7 @@ export function ProjectsSectionNew() {
         </motion.div>
 
         {/* 2x2 Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto mb-12 md:mb-16">
           {featuredProjects.slice(0, 4).map((project, index) => (
             <motion.div
               key={project.id}
@@ -141,7 +141,7 @@ function ProjectCard({ project, onClick }: ProjectCardProps) {
     <div className="w-full cursor-pointer" onClick={onClick}>
       <div
         className={cn(
-          "group w-full overflow-hidden relative card h-96 lg:h-[450px] rounded-2xl shadow-xl mx-auto flex flex-col justify-end p-6 border border-transparent dark:border-neutral-800",
+          "group w-full overflow-hidden relative card h-80 md:h-96 lg:h-[450px] rounded-2xl shadow-xl mx-auto flex flex-col justify-end p-4 md:p-6 border border-transparent dark:border-neutral-800",
           `bg-[url(${backgroundImages[projectIndex]})] bg-cover bg-center`,
           `before:bg-[url(${hoverImages[projectIndex]})] before:fixed before:inset-0 before:opacity-0 before:z-[-1]`,
           `hover:bg-[url(${hoverImages[projectIndex]})]`,
@@ -150,15 +150,15 @@ function ProjectCard({ project, onClick }: ProjectCardProps) {
         )}
       >
         <div className="text relative z-50">
-          <h1 className="font-bold text-2xl md:text-3xl text-gray-50 relative mb-4">
+          <h1 className="font-bold text-xl md:text-2xl lg:text-3xl text-gray-50 relative mb-3 md:mb-4">
             {project.title}
           </h1>
-          <p className="font-normal text-base text-gray-50 relative mb-6 line-clamp-3">
+          <p className="font-normal text-sm md:text-base text-gray-50 relative mb-4 md:mb-6 line-clamp-3">
             {project.description}
           </p>
 
           {/* Tech Stack Preview */}
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
             {project.technologies.slice(0, 3).map((tech) => (
               <span
                 key={tech}
