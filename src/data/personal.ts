@@ -47,7 +47,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     platform: "Portfolio",
-    url: "https://chetankush.netlify.com",
+    url: "https://chetan-kushwah.netlify.app",
     username: "Portfolio",
     icon: "globe",
   },
