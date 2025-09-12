@@ -23,33 +23,46 @@ export const personalInfo: PersonalInfo = {
   title: "Software Engineer",
   tagline:
     "Building digital experiences that inspire and transform ideas into reality through cutting-edge technology and creative innovation.",
-  bio: "Full Stack Engineer with experience in React.js, Next.js, and Node.js. Specialized in building scalable web applications, AI-powered platforms, and blockchain solutions. Proven track record of optimizing performance and delivering high-quality solutions.",
-  location: "Guna, MP- India",
+  bio: "Full Stack Engineer with experience in React.js, Next.js, and Node.js. Specialized in building scalable web applications, AI-powered platforms and solutions. Proven track record of optimizing performance and delivering high-quality solutions.",
+  location: "Noida, UP - India",
   email: "chetankushwah929@gmail.com",
   phone: "+91 9303135537",
   profileImage: "/images/profile/chetan-kushwah.jpg",
-  resumeUrl: "/resume/chetan-kushwah-resume.pdf",
+  resumeUrl:
+    "https://drive.google.com/file/d/1xpJ4gKEMlJ0W8o2oGPiwELY31fCmKkw1/view?usp=sharing",
   availability: "available",
 };
 
 export const socialLinks: SocialLink[] = [
   {
     platform: "LinkedIn",
-    url: "https://linkedin.com/in/chetankushwah",
-    username: "@chetankushwah",
+    url: "https://www.linkedin.com/in/chetan-kushwah-5592371b9/",
+    username: "@chetan-kushwah",
     icon: "linkedin",
   },
   {
     platform: "GitHub",
     url: "https://github.com/chetankush",
-    username: "@chetankushwah",
+    username: "@chetankush",
     icon: "github",
   },
   {
+    platform: "LeetCode",
+    url: "https://leetcode.com/u/chetan_01010_/",
+    username: "@chetan_01010_",
+    icon: "code",
+  },
+  {
     platform: "Portfolio",
-    url: "https://chetan-kushwah.netlify.app",
+    url: "https://dev.d2is74ake4666u.amplifyapp.com/",
     username: "Portfolio",
     icon: "globe",
+  },
+  {
+    platform: "Instagram",
+    url: "https://www.instagram.com/chetankushwah05",
+    username: "@chetankushwah05",
+    icon: "instagram",
   },
   {
     platform: "Email",
@@ -73,9 +86,9 @@ export const interests = [
 ];
 
 export const stats = {
-  yearsOfExperience: 4,
-  projectsCompleted: 50,
-  clientsSatisfied: 25,
+  yearsOfExperience: 2,
+  projectsCompleted: 10,
+  clientsSatisfied: 5,
   linesOfCode: 100000,
   coffeeConsumed: 1000,
 };

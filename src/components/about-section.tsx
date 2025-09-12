@@ -5,16 +5,16 @@ import { personalInfo, stats } from "@/data/personal";
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative bg-white dark:bg-black pt-32 pb-16">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="about" className="relative bg-white dark:bg-black pt-16 md:pt-32 pb-8 md:pb-16 w-full overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 w-full">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-5">
+          <h2 className="text-2xl md:text-5xl font-bold mb-5">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
               About
             </span>{" "}
@@ -25,7 +25,7 @@ export function AboutSection() {
           <div className="w-20 h-1 bg-gradient-to-r from-neutral-50 to-neutral-400 mx-auto mb-6"></div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center w-full max-w-full">
           {/* Bio Section */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -64,72 +64,72 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-2 gap-3 md:gap-6 w-full max-w-full"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10"
+              className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-2xl p-3 md:p-6 text-center border border-white/10 w-full max-w-full will-change-transform"
             >
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-neutral-50 to-neutral-400 bg-clip-text text-transparent"
+                className="text-xl md:text-4xl font-bold bg-gradient-to-r from-neutral-50 to-neutral-400 bg-clip-text text-transparent"
               >
                 {stats.yearsOfExperience}+
               </motion.p>
-              <p className="text-gray-600 dark:text-gray-300 font-medium">
+              <p className="text-gray-600 dark:text-gray-300 font-medium text-xs md:text-base">
                 Years Experience
               </p>
             </motion.div>
 
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10"
+              className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-2xl p-3 md:p-6 text-center border border-white/10 w-full max-w-full will-change-transform"
             >
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+                className="text-xl md:text-4xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
               >
                 {stats.projectsCompleted}+
               </motion.p>
-              <p className="text-gray-600 dark:text-gray-300 font-medium">
+              <p className="text-gray-600 dark:text-gray-300 font-medium text-xs md:text-base">
                 Projects Completed
               </p>
             </motion.div>
 
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10"
+              className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-2xl p-3 md:p-6 text-center border border-white/10 w-full max-w-full will-change-transform"
             >
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent"
+                className="text-xl md:text-4xl font-bold bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent"
               >
                 {stats.clientsSatisfied}+
               </motion.p>
-              <p className="text-gray-600 dark:text-gray-300 font-medium">
+              <p className="text-gray-600 dark:text-gray-300 font-medium text-xs md:text-base">
                 Happy Clients
               </p>
             </motion.div>
 
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10"
+              className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-2xl p-3 md:p-6 text-center border border-white/10 w-full max-w-full will-change-transform"
             >
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
-                className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent"
+                className="text-xl md:text-4xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent"
               >
                 {Math.floor(stats.linesOfCode / 1000)}K+
               </motion.p>
-              <p className="text-gray-600 dark:text-gray-300 font-medium">
+              <p className="text-gray-600 dark:text-gray-300 font-medium text-xs md:text-base">
                 Lines of Code
               </p>
             </motion.div>

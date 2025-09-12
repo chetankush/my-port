@@ -22,12 +22,11 @@ import {
   Sparkles,
 } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { BackgroundLines } from "@/components/ui/background-lines";
 
 export function SkillsSection() {
   return (
     <section id="skills" className="relative bg-black py-16 md:py-32 min-h-[auto] md:min-h-screen">
-      <BackgroundLines className="flex items-center justify-center w-full flex-col px-4 relative z-0">
+      <div className="flex items-center justify-center w-full flex-col px-4 relative z-0">
         <div className="relative z-10 max-w-6xl mx-auto w-full">
           {/* Section Header */}
           <motion.div
@@ -63,7 +62,7 @@ export function SkillsSection() {
             <SkillsGrid />
           </motion.div>
         </div>
-      </BackgroundLines>
+      </div>
     </section>
   );
 }

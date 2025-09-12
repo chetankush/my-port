@@ -12,7 +12,6 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import { personalInfo } from "@/data/personal";
 
 export function ContactSection() {
@@ -29,23 +28,31 @@ export function ContactSection() {
     
     const form = e.target as HTMLFormElement;
     const formDataObj = new FormData(form);
-    
-    formDataObj.append("access_key", "9965bd88-a2a3-4cbc-b2c0-74ef9b85fc63");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formDataObj
-    });
+    try {
+      const response = await fetch("https://formspree.io/f/mnnbrbnz", {
+        method: "POST",
+        body: formDataObj,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      form.reset();
-      setFormData({ name: "", email: "", message: "" });
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      if (response.ok) {
+        setResult("Message sent successfully! I'll get back to you soon.");
+        form.reset();
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          setResult(`Error: ${data.errors.map((error: any) => error.message).join(", ")}`);
+        } else {
+          setResult("Oops! There was a problem sending your message.");
+        }
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setResult("There was a problem sending your message. Please try again.");
     }
   };
 
@@ -59,18 +66,17 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative min-h-screen bg-black pt-32">
-      <BackgroundBeams />
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-16">
+    <section id="contact" className="relative min-h-screen bg-black pt-16 md:pt-32 w-full overflow-hidden">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-8 md:py-16 w-full">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-5">
+          <h2 className="text-2xl md:text-5xl font-bold mb-5">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
               Let's
             </span>{" "}
@@ -79,13 +85,13 @@ export function ContactSection() {
             </span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-neutral-50 to-neutral-400 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-2">
             Have a project in mind or just want to chat? I'd love to hear from
             you.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -187,8 +193,7 @@ export function ContactSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <input type="hidden" name="access_key" value="9965bd88-a2a3-4cbc-b2c0-74ef9b85fc63" />
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 w-full max-w-full overflow-hidden">
               <div>
                 <label
                   htmlFor="name"
@@ -203,8 +208,9 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors will-change-transform"
                   placeholder="Your name"
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -222,8 +228,9 @@ export function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors will-change-transform"
                   placeholder="your.email@example.com"
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -241,16 +248,17 @@ export function ContactSection() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors resize-none"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors resize-none will-change-transform"
                   placeholder="Tell me about your project..."
+                  suppressHydrationWarning
                 />
               </div>
 
               <div className="w-full">
                 <HoverBorderGradient
-                  containerClassName="rounded-lg w-full"
+                  containerClassName="rounded-lg w-full max-w-full"
                   as="button"
-                  className="dark:bg-black bg-white text-black dark:text-white flex items-center justify-center w-full py-3 font-bold text-base"
+                  className="bg-white/10 backdrop-blur-sm border border-white/20 text-white flex items-center justify-center w-full py-2 md:py-3 font-bold text-sm md:text-base hover:bg-white/15 transition-colors"
                   {...({ type: "submit" } as any)}
                 >
                   <span>Send Message</span>

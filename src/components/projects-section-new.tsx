@@ -95,7 +95,11 @@ export function ProjectsSectionNew() {
             containerClassName="rounded-full"
             as="button"
             className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 px-8 py-3 font-bold text-base"
-            onClick={() => router.push("/projects")}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              router.push("/projects");
+            }}
           >
             <span>View All Projects</span>
             <svg
@@ -138,7 +142,14 @@ function ProjectCard({ project, onClick }: ProjectCardProps) {
     Math.abs(project.id.split("").reduce((a, b) => a + b.charCodeAt(0), 0)) % 4;
 
   return (
-    <div className="w-full cursor-pointer" onClick={onClick}>
+    <div 
+      className="w-full cursor-pointer" 
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        onClick();
+      }}
+    >
       <div
         className={cn(
           "group w-full overflow-hidden relative card h-80 md:h-96 lg:h-[450px] rounded-2xl shadow-xl mx-auto flex flex-col justify-end p-4 md:p-6 border border-transparent dark:border-neutral-800",
@@ -178,6 +189,10 @@ function ProjectCard({ project, onClick }: ProjectCardProps) {
             containerClassName="rounded-full"
             as="div"
             className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 px-6 py-2 font-bold text-sm"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
           >
             <span>View Project</span>
             <svg

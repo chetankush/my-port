@@ -53,7 +53,7 @@ export function PortfolioNavbar() {
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black border-2 border-white text-white font-bold text-xs">
             CK
           </div>
-          <span className="font-bold">Chetan</span>
+          <span className="font-bold">Chetan Kushwah</span>
         </motion.a>
 
         {/* Navigation Items */}

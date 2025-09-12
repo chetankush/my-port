@@ -8,7 +8,7 @@
 {
   /* eslint-disable @typescript-eslint/no-explicit-any */
 }
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useId } from "react";
 
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -32,6 +32,7 @@ export function HoverBorderGradient({
     clockwise?: boolean;
   } & React.HTMLAttributes<HTMLElement>
 >) {
+  const id = useId();
   const [hovered, setHovered] = useState<boolean>(false);
   const [direction, setDirection] = useState<Direction>("TOP");
 
@@ -66,6 +67,7 @@ export function HoverBorderGradient({
   }, [hovered]);
   return (
     <Tag
+      key={id}
       onMouseEnter={(event: React.MouseEvent<HTMLDivElement>) => {
         setHovered(true);
       }}
@@ -74,6 +76,7 @@ export function HoverBorderGradient({
         "relative flex rounded-full border  content-center bg-black/20 hover:bg-black/10 transition duration-500 dark:bg-white/20 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit cursor-pointer",
         containerClassName
       )}
+      suppressHydrationWarning
       {...props}
     >
       <div

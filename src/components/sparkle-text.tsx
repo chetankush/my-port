@@ -23,8 +23,15 @@ export function SparkleText({
   sparkleCount = 20,
 }: SparkleTextProps) {
   const [sparkles, setSparkles] = React.useState<Sparkle[]>([]);
+  const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  React.useEffect(() => {
+    if (!mounted) return;
+    
     const generateSparkles = () => {
       const newSparkles: Sparkle[] = [];
       for (let i = 0; i < sparkleCount; i++) {
@@ -42,7 +49,7 @@ export function SparkleText({
     generateSparkles();
     const interval = setInterval(generateSparkles, 3000);
     return () => clearInterval(interval);
-  }, [sparkleCount]);
+  }, [sparkleCount, mounted]);
 
   return (
     <div className={cn("relative inline-block")}>
@@ -56,7 +63,7 @@ export function SparkleText({
       </motion.h1>
 
       {/* Sparkles */}
-      {sparkles.map((sparkle) => (
+      {mounted && sparkles.map((sparkle) => (
         <motion.div
           key={sparkle.id}
           className="absolute pointer-events-none z-20"
