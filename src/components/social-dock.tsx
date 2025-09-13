@@ -57,9 +57,9 @@ export function SocialDock() {
   ];
 
   return (
-    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+    <div className="fixed bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 z-50">
       <FloatingDock
-        mobileClassName="translate-y-20" // only for demo, remove for production
+        mobileClassName="!py-0" // Remove vertical padding for mobile
         items={links}
       />
     </div>
