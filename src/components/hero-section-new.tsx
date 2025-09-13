@@ -72,7 +72,7 @@ export function HeroSectionNew() {
           />
         </div>
         <div className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full relative z-10">
-          <div className="max-w-5xl mx-auto text-center z-20 relative pt-14 md:pt-16">
+          <div className="max-w-5xl mx-auto text-center z-20 relative pt-10 md:pt-16 pb-16 md:pb-20">
             {/* Main Name with Sparkles */}
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
@@ -141,7 +141,7 @@ export function HeroSectionNew() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1.5 }}
-              className="absolute bottom-[-54px] left-1/2 transform -translate-x-1/2"
+              className="absolute bottom-[-44px] md:bottom-[-52px] left-1/2 transform -translate-x-1/2"
             >
               <motion.div
                 animate={{ y: [0, 7, 0] }}
@@ -216,7 +216,7 @@ export function HeroSectionNew() {
           />
         </div>
         <div className="bg-black/20 flex items-center flex-col justify-center px-2 py-4 w-full h-full relative z-10">
-          <div className="max-w-5xl mx-auto text-center z-20 relative pt-14">
+          <div className="max-w-5xl mx-auto text-center z-20 relative pt-14 pb-16">
             {/* Main Name with Sparkles */}
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}

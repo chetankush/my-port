@@ -40,13 +40,13 @@ export function PortfolioNavbar() {
   };
 
   return (
-    <Navbar className="fixed top-4 z-50">
+    <Navbar className="!fixed !top-0 !left-0 !right-0 !mx-0 md:!top-4 z-50">
       {/* Desktop Navigation */}
       <NavBody>
         {/* Logo */}
         <motion.a
           href="#home"
-          className="relative z-20 flex items-center space-x-2 px-2 py-1 text-sm font-bold text-black dark:text-white cursor-pointer"
+          className="relative z-20 flex items-center space-x-2 px-2 py-1 ml-[2px] text-sm font-bold text-black dark:text-white cursor-pointer"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
@@ -75,7 +75,7 @@ export function PortfolioNavbar() {
         <MobileNavHeader>
           <motion.a
             href="#home"
-            className="flex items-center space-x-2 px-2 py-1 text-sm font-bold text-black dark:text-white cursor-pointer"
+            className="flex items-center space-x-2 px-2 py-1 ml-[2px] text-sm font-bold text-black dark:text-white cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black border-2 border-white text-white font-bold text-xs">

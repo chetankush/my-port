@@ -77,7 +77,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     <motion.div
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-      className={cn("sticky inset-x-0 top-20 z-40 w-full", className)}
+      className={cn("inset-x-0 z-40 w-full", className)}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -158,14 +158,12 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
     <motion.div
       animate={{
         backdropFilter: visible ? "blur(10px)" : "none",
-        boxShadow: visible
-          ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
-          : "none",
-        width: visible ? "90%" : "100%",
-        paddingRight: visible ? "12px" : "0px",
-        paddingLeft: visible ? "12px" : "0px",
+        boxShadow: "none",
+        width: "100%",
+        paddingRight: "0px",
+        paddingLeft: "0px",
         borderRadius: visible ? "4px" : "2rem",
-        y: visible ? 20 : 0,
+        y: 0,
       }}
       transition={{
         type: "spring",
@@ -173,7 +171,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         damping: 50,
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
+        "relative z-50 flex w-full flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden border-t-0",
         visible && "bg-white/80 dark:bg-neutral-950/80",
         className
       )}
@@ -233,12 +231,12 @@ export const MobileNavToggle = ({
 }) => {
   return isOpen ? (
     <IconX
-      className="text-black dark:text-white cursor-pointer"
+      className="text-black dark:text-white cursor-pointer mr-4 w-6 h-6"
       onClick={onClick}
     />
   ) : (
     <IconMenu2
-      className="text-black dark:text-white cursor-pointer"
+      className="text-black dark:text-white cursor-pointer mr-4 w-6 h-6"
       onClick={onClick}
     />
   );
