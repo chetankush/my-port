@@ -66,8 +66,8 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative min-h-screen bg-black pt-16 md:pt-32 w-full overflow-hidden">
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-8 md:py-16 w-full">
+    <section id="contact" className="relative min-h-screen bg-black pt-16 md:pt-32 w-full overflow-hidden ">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-8 md:py-16 w-full mb-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
