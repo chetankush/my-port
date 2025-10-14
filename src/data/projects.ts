@@ -42,7 +42,14 @@ export const projects: Project[] = [
       "AI-powered YouTube summarizer that reduced video consumption time by 70% using Next.js and TypeScript.",
     longDescription:
       "Developed AI-powered YouTube summarizer that reduced video consumption time by 70% using Next.js and TypeScript. Integrated LLMs for video text content analysis with 95% accuracy, implemented tool calling using gemini api. Optimized component rendering with React hooks and state management.",
-    technologies: ["NextJs", "Vercel AI SDK", "OpenAI", "Convex", "Clerk", "TypeScript"],
+    technologies: [
+      "NextJs",
+      "Vercel AI SDK",
+      "OpenAI",
+      "Convex",
+      "Clerk",
+      "TypeScript",
+    ],
     features: [
       "Reduced video consumption time by 70%",
       "95% accuracy in content analysis",
@@ -52,34 +59,6 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/chetankush/yt-agent-golum",
     imageUrl: "/images/projects/youtube-summarizer.jpg",
-    category: "ai",
-    status: "completed",
-    featured: true,
-  },
-  {
-    id: "mcp-ai-agent",
-    title: "MCP AI Agent",
-    description:
-      "Developed webapp using MCP to integrate AI agents with Twitter for automated post generation.",
-    longDescription:
-      "Developed webapp using MCP to integrate AI agents with Twitter for automated post generation. Optimized server-client architecture with Express.js for efficient API handling and real-time Twitter service integration. Built system that automatically generates and publishes posts to Twitter using AI.",
-    technologies: [
-      "ReactJs",
-      "Firebase",
-      "Redux",
-      "Stripe",
-      "Express.js",
-      "MCP",
-    ],
-    features: [
-      "Automated post generation",
-      "Real-time Twitter integration",
-      "Optimized server-client architecture",
-      "AI-powered content creation",
-      "Efficient API handling",
-    ],
-    githubUrl: "https://github.com/chetankushwah/mcp-ai-agent",
-    imageUrl: "/images/projects/mcp-ai-agent.jpg",
     category: "ai",
     status: "completed",
     featured: true,
