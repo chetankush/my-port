@@ -25,7 +25,7 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setResult("Sending....");
-    
+
     const form = e.target as HTMLFormElement;
     const formDataObj = new FormData(form);
 
@@ -34,8 +34,8 @@ export function ContactSection() {
         method: "POST",
         body: formDataObj,
         headers: {
-          'Accept': 'application/json'
-        }
+          Accept: "application/json",
+        },
       });
 
       if (response.ok) {
@@ -45,7 +45,11 @@ export function ContactSection() {
       } else {
         const data = await response.json();
         if (data.errors) {
-          setResult(`Error: ${data.errors.map((error: any) => error.message).join(", ")}`);
+          setResult(
+            `Error: ${data.errors
+              .map((error: any) => error.message)
+              .join(", ")}`
+          );
         } else {
           setResult("Oops! There was a problem sending your message.");
         }
@@ -66,8 +70,11 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative min-h-screen bg-black pt-16 md:pt-32 w-full overflow-hidden">
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-8 md:py-16 w-full">
+    <section
+      id="contact"
+      className="relative min-h-screen bg-black pt-16 md:pt-32 pb-12 w-full overflow-hidden "
+    >
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-8 md:py-16 w-full mb-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -193,7 +200,10 @@ export function ContactSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 w-full max-w-full overflow-hidden">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4 md:space-y-6 w-full max-w-full overflow-hidden"
+            >
               <div>
                 <label
                   htmlFor="name"
@@ -264,16 +274,18 @@ export function ContactSection() {
                   <span>Send Message</span>
                 </HoverBorderGradient>
               </div>
-              
+
               {result && (
                 <div className="text-center mt-4">
-                  <span className={`text-sm ${
-                    result === "Form Submitted Successfully" 
-                      ? "text-green-400" 
-                      : result === "Sending...." 
-                        ? "text-blue-400" 
+                  <span
+                    className={`text-sm ${
+                      result === "Form Submitted Successfully"
+                        ? "text-green-400"
+                        : result === "Sending...."
+                        ? "text-blue-400"
                         : "text-red-400"
-                  }`}>
+                    }`}
+                  >
                     {result}
                   </span>
                 </div>
