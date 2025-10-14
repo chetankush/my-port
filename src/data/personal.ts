@@ -29,7 +29,7 @@ export const personalInfo: PersonalInfo = {
   phone: "+91 9303135537",
   profileImage: "/images/profile/chetan-kushwah.jpg",
   resumeUrl:
-    "https://drive.google.com/file/d/1xpJ4gKEMlJ0W8o2oGPiwELY31fCmKkw1/view?usp=sharing",
+    "https://drive.google.com/file/d/1HVoSC8axSCuzSu0whh3NRw-To_EyYMEw/view?usp=drive_link",
   availability: "available",
 };
 
